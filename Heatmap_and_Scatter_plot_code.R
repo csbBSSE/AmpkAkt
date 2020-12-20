@@ -9,11 +9,11 @@ all_packages<-c(cran_packages,bioconductor_packages)
 sapply(all_packages,library,character.only = T)
 
 #loading required parameter and final steady state files
-setwd("A:/Ph.D/Manuscripts/AMPK-AKT_modelling/")
-file_name="A:/Ph.D/Manuscripts/AMPK-AKT_modelling/parameter_sets_and_final_states_RPS_10000_RIS_1000_(21_05_2020).txt";
+setwd("/working/directory")
+file_name="/path/to/full/parameter/sets/file";
 parameter_sets=read.delim(file_name,header = T,stringsAsFactors = F);
 
-file_name1="A:/Ph.D/Manuscripts/AMPK-AKT_modelling/parameter_set_abs_final_state_vectors_RPS_10000_RIS_1000_(21_05_2020).txt";
+file_name1="/path/to/full/absolute/steady/state/file";
 data1=read.delim(file_name1,header = T,stringsAsFactors = F);
 dat=apply(data1,2,as.numeric);
 colnames(dat)<-sub("f_","",colnames(dat));
